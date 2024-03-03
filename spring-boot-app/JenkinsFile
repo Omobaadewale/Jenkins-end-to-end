@@ -1,19 +1,7 @@
 pipeline { 
 agent any
 
-    stages {
-        stage('Login to Docker Hub') {
-            steps {
-                script {
-                    // Login to Docker Hub
-                    docker.withRegistry('https://index.docker.io/v1/', 'docker-hub-credentials') {
-                        // Now you can pull, run, or push Docker images
-                        // For example, to pull an image:
-                        docker.image('omobaadewale/maven-omobaadewale-docker-agent:v1').pull()
-                    }
-                }
-            }
-        }
+  
   stages {
     stage('Checkout') {
       steps {
